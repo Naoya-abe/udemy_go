@@ -1,7 +1,11 @@
 // hello.go
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os/user"
+	"time"
+)
 
 /*
 func init() {
@@ -13,7 +17,13 @@ func bazz() {
 	fmt.Println("bazz")
 }
 
+func showTime() {
+	fmt.Println(time.Now())
+}
+
 func main() {
-	// bazz()
-	fmt.Println("Hello world!!", "TEST TEST")
+	bazz()
+	showTime()
+	fmt.Println("Hello world!!")
+	fmt.Println(user.Current())
 }
