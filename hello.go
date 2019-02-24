@@ -1,8 +1,6 @@
 // hello.go
 package main
 
-import "fmt"
-
 // func add(x, y int) (int, int) {
 // 	// fmt.Println(x + y)
 // 	return x - y, x + y
@@ -84,6 +82,16 @@ func save() {
 	thirdPartyConnectDB()
 }
 */
+/*
+func one(x *int) {
+	*x = 1
+}
+*/
+
+type Vertex struct {
+	X, Y int
+	S    string
+}
 
 func main() {
 	// var x int = 1
@@ -433,29 +441,82 @@ func main() {
 		fmt.Println(sum)
 	*/
 
-	l := []int{100, 300, 23, 11, 23, 2, 4, 6, 4}
-	var min int
-	for i, num := range l {
-		if i == 0 {
-			min = num
+	/*
+		l := []int{100, 300, 23, 11, 23, 2, 4, 6, 4}
+		var min int
+		for i, num := range l {
+			if i == 0 {
+				min = num
+			}
+			if min >= num {
+				min = num
+			}
 		}
-		if min >= num {
-			min = num
-		}
-	}
-	fmt.Println(min)
+		fmt.Println(min)
 
-	m := map[string]int{
-		"apple":   200,
-		"banana":  100,
-		"peach":   300,
-		"papaiya": 500,
-		"orange":  80,
-		"kiwi":    90,
-	}
-	sum := 0
-	for _, v := range m {
-		sum += v
-	}
-	fmt.Println(sum)
+		m := map[string]int{
+			"apple":   200,
+			"banana":  100,
+			"peach":   300,
+			"papaiya": 500,
+			"orange":  80,
+			"kiwi":    90,
+		}
+		sum := 0
+		for _, v := range m {
+			sum += v
+		}
+		fmt.Println(sum)
+	*/
+
+	/*
+		var n int = 100
+		fmt.Println(n)
+
+		var p *int = &n
+		fmt.Println(p)
+		fmt.Println(*p)
+	*/
+	/*
+		var n int = 100
+		one(&n)
+		fmt.Println(n)
+	*/
+
+	/*
+		var p *int = new(int)
+		fmt.Println(*p)
+		*p++
+		fmt.Println(*p)
+
+		var p2 *int
+		fmt.Println(p2)
+	*/
+
+	/*
+		v := Vertex{X: 1, Y: 2}
+
+		fmt.Println(v)
+		fmt.Println(v.X, v.Y)
+		v.X = 100
+		fmt.Println(v.X, v.Y)
+
+		v2 := Vertex{X: 1}
+		fmt.Println(v2)
+
+		v3 := Vertex{1, 2, "test"}
+		fmt.Println(v3)
+
+		v4 := Vertex{}
+		fmt.Println(v4)
+
+		var v5 Vertex
+		fmt.Println(v5)
+
+		v6 := new(Vertex)
+		fmt.Printf("%T %v\n", v6, v6)
+
+		v7 := &Vertex{}
+		fmt.Printf("%T %v\n", v7, v7)
+	*/
 }
