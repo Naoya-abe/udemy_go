@@ -400,13 +400,44 @@ func main() {
 		fmt.Println("OK?")
 	*/
 
-	l := []int{100, 300, 23, 11, 23, 2, 3, 4, 3}
+	/*
+		l := []int{100, 300, 23, 11, 23, 2, 3, 4, 3}
+		var min int
+		fmt.Println(min)
+		for i, num := range l {
+			if i == 0 {
+				min = num
+				continue
+			}
+			if min >= num {
+				min = num
+			}
+		}
+		fmt.Println(min)
+
+		m := map[string]int{
+			"apple":   200,
+			"banana":  300,
+			"grapes":  150,
+			"orange":  80,
+			"papaiya": 500,
+			"kiwi":    90,
+		}
+
+		sum := 0
+
+		for _, v := range m {
+			sum += v
+		}
+
+		fmt.Println(sum)
+	*/
+
+	l := []int{100, 300, 23, 11, 23, 2, 4, 6, 4}
 	var min int
-	fmt.Println(min)
 	for i, num := range l {
 		if i == 0 {
 			min = num
-			continue
 		}
 		if min >= num {
 			min = num
@@ -416,18 +447,15 @@ func main() {
 
 	m := map[string]int{
 		"apple":   200,
-		"banana":  300,
-		"grapes":  150,
-		"orange":  80,
+		"banana":  100,
+		"peach":   300,
 		"papaiya": 500,
+		"orange":  80,
 		"kiwi":    90,
 	}
-
 	sum := 0
-
 	for _, v := range m {
 		sum += v
 	}
-
 	fmt.Println(sum)
 }
