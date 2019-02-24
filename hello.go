@@ -39,6 +39,52 @@ import "fmt"
 // 	}
 // }
 
+/*
+func by2(num int) string {
+	if num%2 == 0 {
+		return "ok"
+	} else {
+		return "no"
+	}
+}
+*/
+
+/*
+func getOsName() string {
+	return "mac"
+}
+*/
+
+/*
+func foo() {
+	defer fmt.Println("world foo")
+
+	fmt.Println("hello foo")
+}
+*/
+
+/*
+func LoggingSettings(logFile string) {
+	logfile, _ := os.OpenFile(logFile, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	multilogFile := io.MultiWriter(os.Stdout, logfile)
+	log.SetFlags(log.Ldate | log.Ltime | log.Llongfile)
+	log.SetOutput(multilogFile)
+}
+*/
+
+/*
+func thirdPartyConnectDB() {
+	panic("Unable to connect database")
+}
+func save() {
+	defer func() {
+		s := recover()
+		fmt.Println(s)
+	}()
+	thirdPartyConnectDB()
+}
+*/
+
 func main() {
 	// var x int = 1
 	// xx := float64(x)
@@ -185,16 +231,203 @@ func main() {
 	// s := []int{1, 2, 3}
 	// foo(s...)
 
-	// Q1
-	f := 1.11
-	fmt.Println(int(f))
+	// // Q1
+	// f := 1.11
+	// fmt.Println(int(f))
 
-	// Q2
-	// 5
-	// 6
+	// // Q2
+	// // 5
+	// // 6
 
-	// Q3
-	m := map[string]int{"Mike": 20, "Nancy": 24, "Messi": 30}
-	fmt.Printf("%T %v\n", m, m)
-	fmt.Println(m["Mike"])
+	// // Q3
+	// m := map[string]int{"Mike": 20, "Nancy": 24, "Messi": 30}
+	// fmt.Printf("%T %v\n", m, m)
+	// fmt.Println(m["Mike"])
+
+	// num := 6
+	// if num%2 == 0 {
+	// 	fmt.Println("by 2")
+	// } else if num%3 == 0 {
+	// 	fmt.Println("by 3")
+	// } else {
+	// 	fmt.Println("else")
+	// }
+
+	/*
+		x, y := 10, 11
+		if x == 10 && y == 10 {
+			fmt.Println("&&")
+		} else if x == 10 || y == 10 {
+			fmt.Println("||")
+		}
+	*/
+
+	/*
+		result := by2(10)
+		if result == "ok" {
+			fmt.Println("great")
+		}
+
+		if result2 := by2(10); result2 == "ok" {
+			fmt.Println("great2")
+		}
+	*/
+
+	/*
+		for i := 0; i < 10; i++ {
+			if i == 3 {
+				fmt.Println("continue")
+				continue
+			}
+
+			if i > 5 {
+				fmt.Println("break")
+				break
+			}
+			fmt.Println(i)
+		}
+		sum := 1
+		for sum < 10 {
+			sum += sum
+			fmt.Println(sum)
+		}
+		fmt.Println(sum)
+	*/
+
+	/*
+		l := []string{"python", "go", "java"}
+
+		for i := 0; i < len(l); i++ {
+			fmt.Println(i, l[i])
+		}
+
+		for i, v := range l {
+			fmt.Println(i, v)
+		}
+
+		for _, v := range l {
+			fmt.Println(v)
+		}
+
+		m := map[string]int{"apple": 100, "banana": 200}
+
+		for k, v := range m {
+			fmt.Println(k, v)
+		}
+
+		for k := range m {
+			fmt.Println(k)
+		}
+
+		for _, v := range m {
+			fmt.Println(v)
+		}
+	*/
+
+	/*
+		// os := getOsName()
+		switch os := getOsName(); os {
+		case "mac":
+			fmt.Println("Mac!!")
+		case "windows":
+			fmt.Println("Windows!!")
+		default:
+			fmt.Println("default!")
+		}
+
+		t := time.Now()
+		fmt.Println(t.Hour())
+		switch {
+		case t.Hour() < 12:
+			fmt.Println("morning")
+		case t.Hour() > 12:
+			fmt.Println("afternoon")
+		}
+	*/
+	/*
+		defer fmt.Println("world")
+
+		foo()
+
+		fmt.Println("hello")
+	*/
+	/*
+		fmt.Println("run")
+		defer fmt.Println(1)
+		defer fmt.Println(2)
+		defer fmt.Println(3)
+		fmt.Println("success")
+	*/
+	/*
+		file, _ := os.Open("./hello.go")
+		defer file.Close()
+		data := make([]byte, 100)
+		file.Read(data)
+		fmt.Println(data)
+	*/
+
+	/*
+		LoggingSettings("test.log")
+		_, err := os.Open("fafavae")
+		if err != nil {
+			log.Fatalln("Exit", err)
+		}
+
+		log.Println("logging!")
+		log.Printf("%T %v", "test", "test")
+		log.Fatalf("%T %v", "test", "test")
+		log.Fatalln("error!")
+
+		fmt.Println("ok!")
+	*/
+
+	/*
+		file, err := os.Open("./hello.go")
+		if err != nil {
+			log.Fatalln("Error!")
+		}
+		defer file.Close()
+		data := make([]byte, 100)
+		count, err := file.Read(data)
+		if err != nil {
+			log.Fatalln("Error")
+		}
+		fmt.Println(count, string(data))
+	*/
+
+	/*
+		save()
+		fmt.Println("OK?")
+	*/
+
+	l := []int{100, 300, 23, 11, 23, 2, 3, 4, 3}
+	var min int
+	fmt.Println(min)
+	for i, num := range l {
+		if i == 0 {
+			min = num
+			continue
+		}
+		if min >= num {
+			min = num
+		}
+	}
+	fmt.Println(min)
+
+	m := map[string]int{
+		"apple":   200,
+		"banana":  300,
+		"grapes":  150,
+		"orange":  80,
+		"papaiya": 500,
+		"kiwi":    90,
+	}
+
+	sum := 0
+
+	for _, v := range m {
+		sum += v
+	}
+
+	fmt.Println(sum)
 }
