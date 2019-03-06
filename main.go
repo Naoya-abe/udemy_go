@@ -28,4 +28,5 @@ func main() {
 	fmt.Printf("%T %v\n", Config.Port, Config.Port)
 	fmt.Printf("%T %v\n", Config.DbName, Config.DbName)
 	fmt.Printf("%T %v\n", Config.SQLDriver, Config.SQLDriver)
+
 }
